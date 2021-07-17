@@ -354,12 +354,12 @@ else
 FFMPEG_CONF_OPTS += --disable-libmodplug
 endif
 
-ifeq ($(BR2_PACKAGE_SPEEX),y)
-FFMPEG_CONF_OPTS += --enable-libspeex
-FFMPEG_DEPENDENCIES += speex
-else
-FFMPEG_CONF_OPTS += --disable-libspeex
-endif
+#ifeq ($(BR2_PACKAGE_SPEEX),y)
+#FFMPEG_CONF_OPTS += --enable-libspeex
+#FFMPEG_DEPENDENCIES += speex
+#else
+#FFMPEG_CONF_OPTS += --disable-libspeex
+#endif
 
 ifeq ($(BR2_PACKAGE_LIBTHEORA),y)
 FFMPEG_CONF_OPTS += --enable-libtheora
