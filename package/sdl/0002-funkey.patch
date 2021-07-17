@@ -1,0 +1,53 @@
+--- a/src/video/fbcon/SDL_fbevents.c
++++ b/a/src/video/fbcon/SDL_fbevents.c
+@@ -1133,6 +1133,50 @@
+ 	  case 127:
+ 	    keymap[i] = SDLK_MENU;
+ 	    break;
++		case SCANCODE_U:
++		keymap[i] = SDLK_UP;
++		break;
++		case SCANCODE_D:
++		keymap[i] = SDLK_DOWN;
++		break;
++		case SCANCODE_L:
++		keymap[i] = SDLK_LEFT;
++		break;
++		case SCANCODE_R:
++		keymap[i] = SDLK_RIGHT;
++		break;
++
++		case SCANCODE_A:
++		keymap[i] = SDLK_LCTRL;
++		break;
++		case SCANCODE_B:
++		keymap[i] = SDLK_LALT;
++		break;
++
++		case SCANCODE_Y:
++		keymap[i] = SDLK_SPACE;
++		break;
++		case SCANCODE_X:
++		keymap[i] = SDLK_LSHIFT;
++		break;
++
++		case SCANCODE_K:
++		keymap[i] = SDLK_ESCAPE;
++		break;
++		case SCANCODE_S:
++		keymap[i] = SDLK_RETURN;
++		break;
++
++		case SCANCODE_Q:
++		keymap[i] = SDLK_HOME;
++		break;
++		case SCANCODE_M:
++		keymap[i] = SDLK_TAB;
++		break;
++
++		case SCANCODE_N:
++		keymap[i] = SDLK_BACKSPACE;
++		break;
+ 	  /* this should take care of all standard ascii keys */
+ 	  default:
+ 	    keymap[i] = KVAL(vga_keymap[0][i]);

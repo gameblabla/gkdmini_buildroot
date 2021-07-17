@@ -1,12 +1,5 @@
 config BR2_PACKAGE_FLUIDSYNTH
 	bool "fluidsynth"
-	depends on BR2_USE_WCHAR # libglib2
-	depends on BR2_TOOLCHAIN_HAS_THREADS # libglib2
-	depends on BR2_USE_MMU # libglib2
-	# the .pc file installed by fluidsynth does not mention its
-	# indirect dependencies in Libs.private.
-	depends on !BR2_STATIC_LIBS
-	select BR2_PACKAGE_LIBGLIB2
 	help
 	  FluidSynth is a real-time software synthesizer based on the
 	  SoundFont 2 specifications and has reached widespread
@@ -127,8 +120,3 @@ config BR2_PACKAGE_FLUIDSYNTH_READLINE
 	  shell.
 
 endif # BR2_PACKAGE_FLUIDSYNTH
-
-comment "fluidsynth needs a toolchain w/ threads, wchar, dynamic library"
-	depends on BR2_USE_MMU
-	depends on !BR2_USE_WCHAR || !BR2_TOOLCHAIN_HAS_THREADS || \
-		BR2_STATIC_LIBS
