@@ -148,7 +148,7 @@ endif
 ifeq ($(BR2_DEBUG_3),y)
 TARGET_DEBUGGING = -g3
 endif
-TARGET_OPTIMIZATION += -fno-PIC -march=armv7-a+neon-vfpv4 -mtune=cortex-a7 -mfpu=neon-vfpv4
+TARGET_OPTIMIZATION += -fno-PIC -mno-abicalls -mframe-header-opt
 
 TARGET_LDFLAGS = $(call qstrip,$(BR2_TARGET_LDFLAGS))
 

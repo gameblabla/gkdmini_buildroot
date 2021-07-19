@@ -1,0 +1,11 @@
+--- a/Makefile
++++ b/Makefile
+@@ -8,7 +8,7 @@
+ #
+ OFLAGS = -O0 -g
+ OFLAGS  = -O2
+-CFLAGS  = -std=gnu99 -fPIC -Wall -Wno-format-truncation $(OFLAGS)
++CFLAGS  = -std=gnu99 -Wall -Wno-format-truncation $(OFLAGS)
+ 
+ SHELL = /bin/sh
+ TAR = tar

@@ -541,6 +541,7 @@ FFMPEG_CONF_OPTS += --cpu="$(GCC_TARGET_ARCH)"
 endif
 
 FFMPEG_CFLAGS = $(TARGET_CFLAGS)
+FFMPEG_CONF_OPTS += --enable-msa --disable-mmi --disable-loongson2 --disable-loongson3 --disable-mipsfpu --disable-mipsdsp --disable-mipsdspr2 --enable-mips32r2 --disable-mips32r5 --pkg-config-flags="--static" --enable-static --disable-shared
 
 ifeq ($(BR2_TOOLCHAIN_HAS_GCC_BUG_85180),y)
 FFMPEG_CONF_OPTS += --disable-optimizations
