@@ -28,7 +28,6 @@ menuconfig BR2_PACKAGE_QT5
 	depends on !BR2_ARM_CPU_ARMV4 # needs ARMv5+
 	# no built-in double-conversion support
 	depends on !BR2_arc
-	depends on !BR2_STATIC_LIBS
 	select BR2_PACKAGE_QT5BASE
 	help
 	  This option enables the Qt5 framework. Sub-options allow to

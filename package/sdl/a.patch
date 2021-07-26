@@ -1,0 +1,44 @@
+--- a/src/video/SDL_video.c
++++ b/src/video/SDL_video.c
+@@ -1066,21 +1066,10 @@
+ 				pal->colors = video->physpal->colors;
+ 			}
+ 		}
+-		if ( SHOULD_DRAWCURSOR(SDL_cursorstate) ) {
+-			SDL_LockCursor();
+-			SDL_DrawCursor(SDL_ShadowSurface);
+-			for ( i=0; i<numrects; ++i ) {
++		for ( i=0; i<numrects; ++i ) {
+ 				SDL_LowerBlit(SDL_ShadowSurface, &rects[i], 
+ 						SDL_VideoSurface, &rects[i]);
+ 			}
+-			SDL_EraseCursor(SDL_ShadowSurface);
+-			SDL_UnlockCursor();
+-		} else {
+-			for ( i=0; i<numrects; ++i ) {
+-				SDL_LowerBlit(SDL_ShadowSurface, &rects[i], 
+-						SDL_VideoSurface, &rects[i]);
+-			}
+-		}
+ 		if ( saved_colors ) {
+ 			pal->colors = saved_colors;
+ 		}
+@@ -1133,17 +1122,8 @@
+ 		rect.y = 0;
+ 		rect.w = screen->w;
+ 		rect.h = screen->h;
+-		if ( SHOULD_DRAWCURSOR(SDL_cursorstate) ) {
+-			SDL_LockCursor();
+-			SDL_DrawCursor(SDL_ShadowSurface);
+-			SDL_LowerBlit(SDL_ShadowSurface, &rect,
++		SDL_LowerBlit(SDL_ShadowSurface, &rect,
+ 					SDL_VideoSurface, &rect);
+-			SDL_EraseCursor(SDL_ShadowSurface);
+-			SDL_UnlockCursor();
+-		} else {
+-			SDL_LowerBlit(SDL_ShadowSurface, &rect,
+-					SDL_VideoSurface, &rect);
+-		}
+ 		if ( saved_colors ) {
+ 			pal->colors = saved_colors;
+ 		}

@@ -1,0 +1,11 @@
+--- a/src/corelib/Qt5CoreConfigExtras.cmake.in
++++ b/src/corelib/Qt5CoreConfigExtras.cmake.in
+@@ -77,7 +77,7 @@
+ # Targets using Qt need to use the POSITION_INDEPENDENT_CODE property. The
+ # Qt5_POSITION_INDEPENDENT_CODE variable is used in the # qt5_use_module
+ # macro to add it.
+-set(Qt5_POSITION_INDEPENDENT_CODE True)
++set(Qt5_POSITION_INDEPENDENT_CODE False)
+ 
+ # On x86 and x86-64 systems with ELF binaries (especially Linux), due to
+ # a new optimization in GCC 5.x in combination with a recent version of
